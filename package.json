@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "vite": "^6.0.11"
+  }
+}

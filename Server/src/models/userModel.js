@@ -1,6 +1,13 @@
 import sequelize from "../config/connections.js";
 
-const User = sequelize.define('User', {
+const tableExists = await sequelize.getQueryInterface().showAllTables()
+if (!tableExists.includes('users')) {
+    await sequelize.sync()
+}
+
+const User = tableExists();
+            
+sequelize.define('User', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -28,7 +35,8 @@ const User = sequelize.define('User', {
     },
     lastLogin: {
         type: DataTypes.DATE
-    }, {
+    }
+}, {
         timestamps: true,
         tableName: 'users'
 });

@@ -1,11 +1,6 @@
 {
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "test": "jest"
-  },
-  "devDependencies": {
-    "vite": "^6.0.11"
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.3",
+    "tailwindcss": "^4.0.3"
   }
 }

@@ -45,48 +45,48 @@ function Form({ setRecipe }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <label className="block">
+      <label className="block text-black">
         Ingredients:
         <textarea
           name="ingredients"
           value={formData.ingredients}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded text-black"
           placeholder="Enter available ingredients..."
         />
       </label>
 
-      <label className="block">
+      <label className="block text-black">
         Cuisine Style:
         <input
           type="text"
           name="cuisine"
           value={formData.cuisine}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded text-black"
           placeholder="e.g., Italian, Mexican"
         />
       </label>
 
-      <label className="block">
+      <label className="block text-black">
         Cooking Time (mins):
         <input
           type="number"
           name="time"
           value={formData.time}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded text-black"
           placeholder="e.g., 30"
         />
       </label>
 
-      <label className="block">
+      <label className="block text-black">
         Difficulty Level:
         <select
           name="difficulty"
           value={formData.difficulty}
           onChange={handleChange}
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded text-black"
         >
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>

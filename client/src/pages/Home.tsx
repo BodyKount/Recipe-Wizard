@@ -49,9 +49,6 @@ const Home = () => {
             <h1 className="text-4xl font-bold text-gray-800 py-6 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Login to start cooking!
             </h1>
-            <h2>
-              <LoginButton />
-            </h2>
             <p className="text-lg text-gray-600 mt-4">
               Login to discover amazing recipes
             </p>

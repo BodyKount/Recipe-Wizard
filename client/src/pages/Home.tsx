@@ -2,7 +2,7 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import { retrieveUsers } from "../api/userAPI";
 import type { UserData } from "../interfaces/UserData";
 import ErrorPage from "./ErrorPage";
-import LoginButton from "../components/LoginButton";
+import LoginButton from "../components/LogInButton";
 import auth from '../utils/auth';
 
 const Home = () => {
@@ -49,10 +49,14 @@ const Home = () => {
             <h1 className="text-4xl font-bold text-gray-800 py-6 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Login to start cooking!
             </h1>
+            <h2>
+              <LoginButton />
+            </h2>
             <p className="text-lg text-gray-600 mt-4">
-              Join to discover amazing recipes
+              Login to discover amazing recipes
             </p>
             <div className="mt-8 space-y-4">
+
               <div className="flex items-center justify-center space-x-4">
                 <span className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
                   <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -7,9 +7,9 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div>
+    <div className="w-full">
       <Navbar />
-      <main className='container pt-5'>
+      <main className="w-full min-h-screen pt-5">
         <Outlet />
       </main>
     </div>

@@ -31,44 +31,63 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-md">
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <h1 className="text-3xl font-bold text-center text-gray-900">Login</h1>
-          
-          <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">
-              Username
-            </label>
-            <input
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              type="text"
-              name="username"
-              value={loginData.username}
-              onChange={handleChange}
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* Dot pattern overlay */}
+      <div className="absolute inset-0">
+        <div className="w-full h-full opacity-20">
+          {[...Array(100)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-blue-600 rounded-full"
+              style={{
+                left: `${(i % 10) * 10}%`,
+                top: `${Math.floor(i / 10) * 10}%`
+              }}
             />
-          </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Login form container */}
+      <div className="relative flex items-center justify-center min-h-screen px-4">
+        <div className="max-w-md w-full space-y-8 p-8 bg-white/80 backdrop-blur-sm rounded-lg shadow-xl">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <h1 className="flex justify-center text-4xl font-bold text-gray-800 py-6 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Login</h1>
+            
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Username
+              </label>
+              <input
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                type="text"
+                name="username"
+                value={loginData.username}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              type="password"
-              name="password"
-              value={loginData.password}
-              onChange={handleChange}
-            />
-          </div>
+            <div className="space-y-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <input
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                type="password"
+                name="password"
+                value={loginData.password}
+                onChange={handleChange}
+              />
+            </div>
 
-          <button
-            className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md shadow-sm transition duration-150 ease-in-out"
-            type="submit"
-          >
-            Login
-          </button>
-        </form>
+            <button
+              className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md shadow-sm transition duration-150 ease-in-out"
+              type="submit"
+            >
+              Login
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

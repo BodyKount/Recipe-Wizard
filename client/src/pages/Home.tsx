@@ -49,9 +49,6 @@ const Home = () => {
             <h1 className="text-4xl font-bold text-gray-800 py-6 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Login to start cooking!
             </h1>
-            <h2>
-              <LoginButton loginCheck={loginCheck} auth={auth} />
-            </h2>
             <p className="text-lg text-gray-600 mt-4">
               Join to discover amazing recipes
             </p>
@@ -72,6 +69,9 @@ const Home = () => {
                 </span>
                 <span className="text-gray-700">Connect with other food lovers</span>
               </div>
+              <h2 className="flex justify-center py-2">
+                <LoginButton/>
+              </h2>
             </div>
           </div>
         </div>

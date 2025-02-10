@@ -18,3 +18,5 @@ export const seedUsers = async () => {
     { individualHooks: true }
   );
 };
+
+export default seedUsers;

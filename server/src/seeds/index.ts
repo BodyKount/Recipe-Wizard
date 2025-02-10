@@ -16,4 +16,4 @@ const seedAll = async (): Promise<void> => {
   }
 };
 
-seedAll();
+export default seedAll();

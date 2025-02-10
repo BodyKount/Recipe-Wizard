@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="w-full">
       <Navbar />
-      <main className="w-full min-h-screen pt-5">
+      <main className="w-full min-h-screen">
         <Outlet />
       </main>
     </div>

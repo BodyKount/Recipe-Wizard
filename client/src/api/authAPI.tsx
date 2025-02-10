@@ -10,16 +10,29 @@ const login = async (userInfo: UserLogin) => {
       body: JSON.stringify(userInfo),
     });
 
-    const data = await response.json();
-
+    // First check if response is ok before trying to parse JSON
     if (!response.ok) {
-      throw new Error('User information not retrieved, check network tab!');
+      // Try to get error message from response
+      try {
+        const errorData = await response.json();
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      } catch (e) {
+        // If JSON parsing fails, use status text
+        throw new Error(`Login failed: ${response.status} ${response.statusText}`);
+      }
     }
 
-    return data;
+    // Only try to parse JSON if response was ok
+    try {
+      const data = await response.json();
+      return data;
+    } catch (e) {
+      throw new Error('Invalid response format from server');
+    }
   } catch (err) {
-    console.log('Error from user login: ', err);
-    return Promise.reject('Could not fetch user info');
+    console.error('Error from user login: ', err);
+    // Throw the actual error instead of a generic message
+    throw err instanceof Error ? err : new Error('Could not fetch user info');
   }
 };
 

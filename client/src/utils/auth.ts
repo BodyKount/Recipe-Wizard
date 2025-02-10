@@ -26,6 +26,7 @@ class AuthService {
         // If the token is expired, return true indicating that it is expired.
         return true;
       }
+      return false;
     } catch (err) {
       // If decoding fails (e.g., due to an invalid token format), catch the error and return false.
       return false;

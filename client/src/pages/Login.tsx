@@ -32,7 +32,6 @@ const Login = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      {/* Dot pattern overlay */}
       <div className="absolute inset-0">
         <div className="w-full h-full opacity-20">
           {[...Array(100)].map((_, i) => (
@@ -48,7 +47,6 @@ const Login = () => {
         </div>
       </div>
       
-      {/* Login form container */}
       <div className="relative flex items-center justify-center min-h-screen px-4">
         <div className="max-w-md w-full space-y-8 p-8 bg-white/80 backdrop-blur-sm rounded-lg shadow-xl">
           <form className="space-y-6" onSubmit={handleSubmit}>

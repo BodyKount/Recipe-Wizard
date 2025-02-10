@@ -20,12 +20,21 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg">
-      <Link to="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
-        <Wand2 size={28} className="text-white" />
-        <h1 className="text-2xl font-bold text-white font-serif tracking-wide">
-          Recipe Wizard
-        </h1>
-      </Link>
+      {!loginCheck ? (
+        <Link to="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
+          <Wand2 size={28} className="text-white" />
+          <h1 className="text-2xl font-bold text-white font-serif tracking-wide">
+            Recipe Wizard
+          </h1>
+        </Link>
+        ) : (
+          <div>
+            <Wand2 size={28} className="text-white" />
+            <h1 className="text-2xl font-bold text-white font-serif tracking-wide">
+              Recipe Wizard
+            </h1>
+          </div>
+      )}
       
       <div className="flex items-center space-x-4">
         {!loginCheck ? (

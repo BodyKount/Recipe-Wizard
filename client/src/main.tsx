@@ -1,5 +1,5 @@
 //the main.tsx file is the entry point for the React application
-// this allwos the app.tsx file to be the main component of the app
+// this allows the app.tsx file to be the main component of the app
 // it renders the app to the root element in the index.html file
 
 
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         path: '/new',
         element: <NewPages />,
       },
-      
+
     ],
   },
 ]);

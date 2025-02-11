@@ -39,7 +39,7 @@ const SavedDishes: React.FC = () => {
           {savedDishes.map((dish: dishInterface) => (
             <li key={dish.id} className="mb-2">
               <h3 className="text-lg font-semibold">{dish.dishName}</h3>
-              <p><strong>Created by:</strong> {dish.recipe}</p>
+              <p><strong>{savedDishes.indexOf(dish) + 1}. </strong>{dish.recipe}</p>
             </li>
           ))}
         </ul>

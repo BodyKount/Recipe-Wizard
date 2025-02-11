@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import auth from "../utils/auth";
 
 interface FormProps {
-  setRecipe: (recipe: { title: string; ingredients: string[]; instructions: string }) => void;
+  setRecipe: (recipe: string) => void;
 }
 
 function Form({ setRecipe }: FormProps) {

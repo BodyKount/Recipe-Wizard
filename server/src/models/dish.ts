@@ -4,7 +4,7 @@ import { User } from './user.js'; // Adjust the import path as necessary
 class Dish extends Model {
     declare id: number;
     declare userId: ForeignKey<User['id']>;
-    declare dishName: string;
+    declare recipe: string;
     declare readonly createdAt: Date;
     declare readonly updatedAt: Date;
 }
@@ -17,12 +17,16 @@ export function DishFactory(sequelize: Sequelize): typeof Dish {
                 autoIncrement: true,
                 primaryKey: true,
             },
-            dishName: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
             userId: {
                 type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                    model: 'users', // Name of the target model
+                    key: 'id', // Key in the target model that the foreign key references
+                },
+            },
+            recipe: {
+                type: DataTypes.TEXT,
                 allowNull: false,
             },
             createdAt: {

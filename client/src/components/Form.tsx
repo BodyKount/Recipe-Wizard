@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import PropTypes from "prop-types";
+import auth from "../utils/auth";
 
 interface FormProps {
   setRecipe: (recipe: { title: string; ingredients: string[]; instructions: string }) => void;
@@ -25,10 +26,12 @@ function Form({ setRecipe }: FormProps) {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes/generate`, {
+      const token = auth.getToken();
+      const response = await fetch("/api/recipes/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
       });

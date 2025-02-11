@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../utils/auth';
 import { Wand2, LogOut, MapPin } from 'lucide-react'; // Ensure MapPin is imported
 import LoginButton from './LogInButton';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [loginCheck, setLoginCheck] = useState(false);
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
@@ -59,6 +60,7 @@ const Navbar = () => {
                   onClick={() => {
                     auth.logout();
                     setLoginCheck(false);
+                    navigate('/')
                   }}
                   className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium shadow-sm"
                 >

@@ -3,8 +3,11 @@ import { useState, type FormEvent, type ChangeEvent } from 'react';
 import Auth from '../utils/auth';
 import { login } from '../api/authAPI';
 import type { UserLogin } from '../interfaces/UserLogin';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState<UserLogin>({
     username: '',
     password: '',
@@ -25,6 +28,7 @@ const Login = () => {
     try {
       const data = await login(loginData);
       Auth.login(data.token);
+      navigate('/new')
     } catch (err) {
       console.error('Failed to login', err);
     }

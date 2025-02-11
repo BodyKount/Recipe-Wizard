@@ -1,20 +1,22 @@
 import { useState } from "react";
 import Form from "../components/Form";
 import RecipeDisplay from "../components/RecipeDisplay";
+import { addFavorites } from "../api/dishAPI";
 
 function RecipeGenerator() {
-    const [recipe, setRecipe] = useState<{ title: string; ingredients: string[]; instructions: string } | null>(null);
+    const [recipe, setRecipe] = useState< string | null>(null);
     const [favorites, setFavorites] = useState<{ title: string; ingredients: string[]; instructions: string }[]>([]);
 
     const addFavorite = () => {
-        if (recipe && !favorites.some(fav => fav.title === recipe.title)) {
-            setFavorites([...favorites, recipe]);
+        if (recipe ) {
+            addFavorites(recipe);
+            setFavorites(favorites);
         }
+        console.log(recipe);
     };
 
     return (
 <div className="h-screen flex">
-    {/* Left Side - Form */}
     <div className="w-1/2 p-10 relative">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -40,7 +42,6 @@ function RecipeGenerator() {
             Add to Favorites
         </button>
         <div className="mt-4">
-            <h2 className="text-xl">Favorite Recipes:</h2>
             <ul>
                 {favorites.map((fav, index) => (
                     <li key={index}>{fav.title}</li>

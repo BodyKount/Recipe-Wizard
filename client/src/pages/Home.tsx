@@ -7,6 +7,7 @@ import auth from '../utils/auth';
 
 const Home = () => {
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [users, setUsers] = useState<UserData[]>([]);
     const [error, setError] = useState(false);
     const [loginCheck, setLoginCheck] = useState(false);

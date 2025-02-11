@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 interface RecipeDisplayProps {
-  recipe: string;
+  recipe:  string;
 }
 
 function RecipeDisplay({ recipe }: RecipeDisplayProps) {

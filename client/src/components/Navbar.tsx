@@ -1,15 +1,23 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import auth from '../utils/auth';
-import { Wand2, LogOut, Utensils, Pizza } from 'lucide-react'; // Import Pizza icon
-import LoginButton from './LogInButton';
+import { Wand2 } from 'lucide-react'; // Import Pizza icon
+
+import LoginButton from '../nav/LogInButton';
+import LogOutButton from '../nav/LogOutButton';
+import NavFoodFacts from '../nav/NavFoodFacts';
+import NavHome from '../nav/NavHome';
+import NavSavedDishes from '../nav/NavSavedDishes';
 
 
 const Navbar = () => {
   const [loginCheck, setLoginCheck] = useState(false);
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/new";
+  const isFoodFactsPage = location.pathname === "/food-facts";
+  const isSavedDishesPage = location.pathname === "/saved-dishes";
+  const isLandingPage = location.pathname === "/";
 
   const checkLogin = () => {
     setLoginCheck(auth.loggedIn());
@@ -44,38 +52,30 @@ const Navbar = () => {
           <>
             <LoginButton />
           </>
-        ) : (
+        ) : isLoginPage || isLandingPage ? (
           <>
-            {!isLoginPage && !isHomePage && (
-              <>
-                <Link 
-                  to="/food-facts"
-                  className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
-                >
-                  <Utensils size={20} />
-                  <span>Food Facts</span>
-                </Link>
-                <Link 
-                  to="/saved-dishes" // Add link to saved dishes page
-                  className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
-                >
-                  <Pizza size={20} /> {/* Use Pizza icon */}
-                  <span>Saved Dishes</span>
-                </Link>
-                <button
-                  onClick={() => {
-                    auth.logout();
-                    setLoginCheck(false);
-                  }}
-                  className="flex items-center space-x-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium shadow-sm"
-                >
-                  <LogOut size={20} />
-                  <span>Logout</span>
-                </button>
-              </>
-            )}
+            <LoginButton />
           </>
-        )}
+        ) : isHomePage ? (
+          <>
+            <NavFoodFacts />
+            <NavSavedDishes />
+            <LogOutButton />
+          </>
+        ) : isFoodFactsPage ? (
+          <>
+            <NavHome />
+            <NavSavedDishes />
+            <LogOutButton />
+          </>
+        ) : isSavedDishesPage ? (
+          <>
+            <NavHome />
+            <NavFoodFacts />
+            <LogOutButton />
+          </>
+        ) : (null)}
+
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import express from 'express';
 import type { Request, Response } from 'express';
-import { User } from '../../models/index.js';
+import { User, Dish } from '../../models/index.js';
 
 const router = express.Router();
 
@@ -21,7 +21,8 @@ router.get('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     const user = await User.findByPk(id, {
-      attributes: { exclude: ['password'] }
+      attributes: { exclude: ['password'] },
+      include: [{ model: Dish, as: 'dishes' }]
     });
     if (user) {
       res.json(user);

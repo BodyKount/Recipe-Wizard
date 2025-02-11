@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import auth from '../utils/auth';
-import { Wand2, LogOut, MapPin } from 'lucide-react'; // Ensure MapPin is imported
+import { Wand2, LogOut, Utensils } from 'lucide-react'; // Replace MapPin with Utensils
 import LoginButton from './LogInButton';
 
 const Navbar = () => {
@@ -51,7 +51,7 @@ const Navbar = () => {
                   to="/food-facts" // Updated the path to /food-facts
                   className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
                 >
-                  <MapPin size={20} />
+                  <Utensils size={20} /> {/* Use Utensils icon */}
                   <span>Food Facts</span>
                 </Link>
                 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import auth from '../utils/auth';
 import { Wand2, LogOut, MapPin } from 'lucide-react'; // Ensure MapPin is imported
 import LoginButton from './LogInButton';
-import NearbyStore from '../pages/NearbyStore';
 
 const Navbar = () => {
   const [loginCheck, setLoginCheck] = useState(false);
@@ -44,11 +43,11 @@ const Navbar = () => {
         ) : (
           <>
             <Link 
-              to="/nearby-store" // Ensure this path matches the route defined in main.tsx
+              to="/food-facts" // Updated the path to /food-facts
               className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
             >
               <MapPin size={20} />
-              <span>Nearby Stores</span>
+              <span>Food Facts</span>
             </Link>
             
             <button

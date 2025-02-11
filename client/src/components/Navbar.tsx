@@ -4,6 +4,7 @@ import auth from '../utils/auth';
 import { Wand2, LogOut, Utensils, Pizza } from 'lucide-react'; // Import Pizza icon
 import LoginButton from './LogInButton';
 
+
 const Navbar = () => {
   const [loginCheck, setLoginCheck] = useState(false);
   const location = useLocation();

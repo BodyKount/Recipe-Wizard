@@ -7,6 +7,7 @@ import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import NewPages from './pages/NewPages.tsx';
 import FoodFacts from './pages/foodFacts.tsx'; // Import FoodFacts page
+import SavedDishes from './pages/savedDishes.tsx'; // Import SavedDishes page
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/food-facts', // Define the route for Food Facts page
         element: <FoodFacts />,
+      },
+      {
+        path: '/saved-dishes', // Define the route for Saved Dishes page
+        element: <SavedDishes />,
       },
     ],
   },

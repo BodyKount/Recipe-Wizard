@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import auth from '../utils/auth';
-import { Wand2, LogOut, Utensils } from 'lucide-react'; // Replace MapPin with Utensils
+import { Wand2, LogOut, Utensils, Pizza } from 'lucide-react'; // Import Pizza icon
 import LoginButton from './LogInButton';
 
 const Navbar = () => {
@@ -48,13 +48,19 @@ const Navbar = () => {
             {!isLoginPage && !isHomePage && (
               <>
                 <Link 
-                  to="/food-facts" // Updated the path to /food-facts
+                  to="/food-facts"
                   className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
                 >
-                  <Utensils size={20} /> {/* Use Utensils icon */}
+                  <Utensils size={20} />
                   <span>Food Facts</span>
                 </Link>
-                
+                <Link 
+                  to="/saved-dishes" // Add link to saved dishes page
+                  className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
+                >
+                  <Pizza size={20} /> {/* Use Pizza icon */}
+                  <span>Saved Dishes</span>
+                </Link>
                 <button
                   onClick={() => {
                     auth.logout();

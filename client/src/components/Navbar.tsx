@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../utils/auth';
 import { Wand2, LogOut, BookOpen } from 'lucide-react';
-import LoginButton from './LoginButton';
-import { LogIn } from 'lucide-react';
+import LoginButton from './LogInButton';
+
 
 const Navbar = () => {
   const [loginCheck, setLoginCheck] = useState(false);

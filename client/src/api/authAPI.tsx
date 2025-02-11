@@ -1,6 +1,7 @@
 import type { UserLogin } from '../interfaces/UserLogin';
 
 const login = async (userInfo: UserLogin) => {
+  console.log('User info:', userInfo);
   try {
     const response = await fetch('/auth/login', {
       method: 'POST',

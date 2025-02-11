@@ -59,7 +59,7 @@ const Login = () => {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 type="text"
                 name="username"
-                value={loginData.username}
+                value={loginData.username as string}
                 onChange={handleChange}
               />
             </div>
@@ -72,7 +72,7 @@ const Login = () => {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 type="password"
                 name="password"
-                value={loginData.password}
+                value={loginData.password as string}
                 onChange={handleChange}
               />
             </div>

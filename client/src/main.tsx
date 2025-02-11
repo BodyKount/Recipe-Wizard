@@ -1,20 +1,16 @@
-//the main.tsx file is the entry point for the React application
-// this allows the app.tsx file to be the main component of the app
-// it renders the app to the root element in the index.html file
-
-
-// We must add the new paths if we want them to render on to the page. 
+// The main.tsx file is the entry point for the React application
+// This allows the App.tsx file to be the main component of the app
+// It renders the app to the root element in the index.html file
 
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-
 import App from './App.tsx';
-
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import NewPages from './pages/NewPages.tsx';
+import NearbyStore from './pages/NearbyStore.tsx';
 
 const router = createBrowserRouter([
   {
@@ -30,12 +26,14 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />,
       },
-      // Creates a new path for the NewPages component
       {
         path: '/new',
         element: <NewPages />,
       },
-
+      {
+        path: '/nearby-store',
+        element: <NearbyStore />,
+      },
     ],
   },
 ]);

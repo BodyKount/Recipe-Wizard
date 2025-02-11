@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../utils/auth';
-import { Wand2, LogOut, BookOpen } from 'lucide-react';
-import LoginButton from './LoginButton';
-import { LogIn } from 'lucide-react';
+import { Wand2, LogOut, MapPin } from 'lucide-react'; // Ensure MapPin is imported
+import LoginButton from './LogInButton';
+import NearbyStore from '../pages/NearbyStore';
 
 const Navbar = () => {
   const [loginCheck, setLoginCheck] = useState(false);
@@ -44,11 +44,11 @@ const Navbar = () => {
         ) : (
           <>
             <Link 
-              to="/Users"
+              to="/nearby-store" // Ensure this path matches the route defined in main.tsx
               className="flex items-center space-x-2 px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 font-medium shadow-sm"
             >
-              <BookOpen size={20} />
-              <span>Recipe Book</span>
+              <MapPin size={20} />
+              <span>Nearby Stores</span>
             </Link>
             
             <button

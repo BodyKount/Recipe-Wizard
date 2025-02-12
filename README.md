@@ -3,9 +3,12 @@
 ## Project Overview
 Recipe-Wizard is a web-based application designed to help users discover, create, and manage recipes effortlessly. This project was developed as part of a Coding Bootcamp group assignment, focusing on full-stack web development skills, API integration, and user-friendly UI/UX design.
 
+## Live Site
+- https://recipe-wizard-noyc.onrender.com/
+
 ## Features
 - Search for recipes by ingredients or cuisine
-- Save and Delete favorite recipes
+- Save favorite recipes
 - Interactive step-by-step cooking instructions
 - User authentication for personalized experiences
 
@@ -13,7 +16,7 @@ Recipe-Wizard is a web-based application designed to help users discover, create
 - **Frontend:** HTML, CSS, TypeScript, Tailwind
 - **Backend:** Node.js, Express.js
 - **Database:** Postgres and Sequalize
-- **API Integration:** OpenAI (for recipe data) Google Maps Platform (nearby grocery stores)
+- **API Integration:** OpenAI (for recipe data) Open Food Facts (for food Facts)
 - **Authentication:** JWT-based user authentication
 - **Version Control:** Git & GitHub
 

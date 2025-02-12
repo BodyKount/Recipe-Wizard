@@ -32,6 +32,7 @@ const Home = () => {
         try {
             const data = await retrieveUsers();
             setUsers(data)
+            console.log(users);
         } catch (err) {
             console.error('Failed to retrieve tickets:', err);
             setError(true);

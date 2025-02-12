@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-import App from './App.tsx';
-import ErrorPage from './pages/ErrorPage.tsx';
-import Home from './pages/Home.tsx';
-import Login from './pages/Login.tsx';
-import NewPages from './pages/NewPages.tsx';
-import FoodFacts from './pages/foodFacts.tsx'; // Import FoodFacts page
-import SavedDishes from './pages/savedDishes.tsx'; // Import SavedDishes page
+import App from './App';
+import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NewPages from './pages/NewPages';
+import FoodFacts from './pages/foodFacts'; // Import FoodFacts page
+import SavedDishes from './pages/savedDishes'; // Import SavedDishes page
 
 const router = createBrowserRouter([
   {

@@ -10,7 +10,7 @@ const sequelize = process.env.DB_URL
       process.env.DB_USER || '',
       process.env.DB_PASSWORD,
       {
-        host: process.env.DB_HOST,
+        host: "localhost",
         dialect: 'postgres',
         dialectOptions: {
           decimalNumbers: true,

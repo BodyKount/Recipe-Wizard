@@ -1,9 +1,9 @@
 # Recipe-Wizard
 
 ## Project Overview
-Recipe-Wizard is a web-based application designed to help users discover, create, and manage recipes effortlessly. This project was developed as part of a Coding Bootcamp group assignment, focusing on full-stack web development skills, API integration, and user-friendly UI/UX design.
+Recipe-Wizard is a web-based application designed to help users discover, create, and manage recipes effortlessly along with view fun food facts. This project was developed as part of a Coding Bootcamp group assignment, focusing on full-stack web development skills, API integration, and user-friendly UI/UX design.
 
-## Live Site
+## Live Site on Render
 - https://recipe-wizard-noyc.onrender.com/
 
 ## Features
